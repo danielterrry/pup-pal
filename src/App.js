@@ -1,15 +1,17 @@
 import './App.scss';
 import './type.scss';
 import Navigation from './components/Navigation';
-import Banner from './components/Banner';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <>
       <Navigation />
-      <div className='container'>
-        <Banner />
-      </div>
+      <main>
+        <div className="container">
+          <Outlet />
+        </div>
+      </main>
     </>
   );
 }

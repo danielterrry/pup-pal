@@ -3,6 +3,7 @@ import Colors from '../Colors';
 import MediaQuery from '../MediaQuery';
 import Burger from './Burger';
 import { ReactComponent as Logo } from '../assets/logo.svg'
+import { NavLink } from 'react-router-dom';
 
 const Nav = styled.nav`
   display: block;
@@ -14,7 +15,12 @@ const NavWrapper = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
+  gap: 1.5rem;
   justify-content: space-between;
+
+  ${MediaQuery.md} {
+    justify-content: flex-start;
+  }
 `;
 
 const NavItems = styled.ul`
@@ -32,7 +38,7 @@ const NavItem = styled.li`
   display: block;
 `;
 
-const NavLink = styled.a`
+const StyledNavLink = styled(NavLink)`
   color: #000000;
   text-overflow: ellipsis;
   text-decoration: none;
@@ -50,21 +56,21 @@ const Navigation = () => {
   return (
     <Nav className='container'>
       <NavWrapper>
-        <div style={{ width: '105px', height: '50px' }}>
+        <a href="/" style={{ width: '105px', height: '50px' }}>
           <Logo />
-        </div>
+        </a>
         <NavItems className="nav-items" role="menu">
           <NavItem>
-            <NavLink href="#">Link 1</NavLink>
+            <StyledNavLink to="/link1">Link 1</StyledNavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Link 2</NavLink>
+            <StyledNavLink to="/link2">Link 2</StyledNavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Link 3</NavLink>
+            <StyledNavLink to="/link3">Link 3</StyledNavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Link 4</NavLink>
+            <StyledNavLink to="/link4">Link 4</StyledNavLink>
           </NavItem>
         </NavItems>
         <Burger />

@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { H1Type, H2Type, TitleH1 } from './Type';
+import { H1Type, H2Type, TitleH2 } from './Type';
 import Pill from './Pill';
 import CategoryCard from '../components/CategoryCard';
 import { useState } from 'react';
@@ -117,7 +117,7 @@ const Banner = () => {
         </BannerContent>
       </HeroBanner>
       <Latest>
-        <TitleH1>Latest</TitleH1>
+        <TitleH2>Latest</TitleH2>
         <FormGroup label="Category" id="category" placeholder="e.g 'diet'" />
         <div class="main">
           {sortedCategories.map((item) => (
